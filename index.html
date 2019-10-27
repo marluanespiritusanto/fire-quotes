@@ -14,19 +14,19 @@
           Fire-Quotes
         </a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li class="logged-in">
+          <li class="logged-in" style="display: none;">
             <a href="#" class="white-text modal-trigger" data-target="modal-account">Account</a>
           </li>
-          <li class="logged-in">
+          <li class="logged-in" style="display: none;">
             <a href="#" class="white-text modal-trigger" data-target="modal-create">Create Quote</a>
           </li>
-          <li class="logged-out">
+          <li class="logged-out" style="display: none;">
             <a href="#" class="white-text modal-trigger" data-target="modal-login">Login</a>
           </li>
-          <li class="logged-out">
+          <li class="logged-out" style="display: none;">
             <a href="#" class="white-text modal-trigger" data-target="modal-signup">Sign up</a>
           </li>
-          <li class="logged-in">
+          <li class="logged-in" style="display: none;">
             <a href="#" class="white-text" id="logout">Logout</a>
           </li>
         </ul>
@@ -73,6 +73,14 @@
       </div>
     </div>
 
+    <div id="modal-account" class="modal">
+      <div class="modal-content center-align">
+        <h4>Account details</h4>
+        <br />
+        <div class="account-details"></div>
+      </div>
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-auth.js"></script>
@@ -82,5 +90,6 @@
     <script src="./js/config/materialize.config.js"></script>
     <script src="./js/utils/definitions.js"></script>
     <script src="./js/auth.js"></script>
+    <script src="./js/index.js"></script>
   </body>
 </html>

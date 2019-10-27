@@ -67,3 +67,12 @@ loginForm.addEventListener("submit", async event => {
     signupForm.reset();
   }
 });
+
+auth.onAuthStateChanged(async user => {
+  if (user) {
+    setupUI(user);
+  } else {
+    console.log(0);
+    setupUI();
+  }
+});
