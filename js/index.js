@@ -17,7 +17,7 @@ async function setupUI(user) {
     loggedInMenu.forEach(menu => (menu.style.display = "block"));
     loggedOutMenu.forEach(menu => (menu.style.display = "none"));
   } else {
-    quotesUl.innerHTML += "<h3 class='center-align'>Please, login to enjoy our qoutes!</h3>";
+    quotesUl.innerHTML += "<h3 class='center-align'>Please, login to enjoy our quotes!</h3>";
     loggedInMenu.forEach(menu => (menu.style.display = "none"));
     loggedOutMenu.forEach(menu => (menu.style.display = "block"));
     adminItems.forEach(el => (el.style.display = "none"));
