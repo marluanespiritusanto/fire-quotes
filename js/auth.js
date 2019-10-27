@@ -5,7 +5,6 @@ signupForm.addEventListener("submit", async event => {
   try {
     const { email, password } = getSignupFormInfo();
     await signup(email, password);
-    console.log("User created");
   } catch (ex) {
     alert("An error ocurred trying to signup: " + ex.message);
   } finally {
@@ -49,7 +48,6 @@ async function logout() {
 logoutButton.addEventListener("click", async event => {
   event.preventDefault();
   await logout();
-  console.log("User logged out!");
 });
 
 loginForm.addEventListener("submit", async event => {
@@ -59,7 +57,6 @@ loginForm.addEventListener("submit", async event => {
   try {
     const { email, password } = getLoginFormInfo();
     await login(email, password);
-    console.log("User logged in!");
   } catch (ex) {
     alert("An error ocurred trying to signup: " + ex.message);
   } finally {
@@ -70,12 +67,14 @@ loginForm.addEventListener("submit", async event => {
 
 auth.onAuthStateChanged(async user => {
   if (user) {
+    const idTokenResult = await user.getIdTokenResult();
+    user.admin = idTokenResult.claims.admin;
     db.collection("quotes").onSnapshot(snapshot => {
       setupQuotes(snapshot.docs);
       setupUI(user);
     });
   } else {
-    console.log(0);
+    setupQuotes([]);
     setupUI();
   }
 });

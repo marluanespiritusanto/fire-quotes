@@ -6,3 +6,5 @@ const loggedOutMenu = document.querySelectorAll(".logged-out");
 const accountDetails = document.querySelector(".account-details");
 const quotesUl = document.querySelector(".quotes");
 const createForm = document.querySelector("#create-form");
+const adminItems = document.querySelectorAll(".admin");
+const adminForm = document.querySelector("#adminForm");
