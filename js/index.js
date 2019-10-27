@@ -18,3 +18,20 @@ async function setupUI(user) {
     loggedOutMenu.forEach(menu => (menu.style.display = "block"));
   }
 }
+
+async function setupQuotes(quotes) {
+  let html = "";
+  quotes.forEach(doc => {
+    const quote = doc.data();
+    const li = `
+      <li>
+        <div class="collapsible-header grey lighten-4">${quote.author}</div>
+        <div class="collapsible-body white lighten-4">${quote.message}</div>
+      </li>
+    `;
+
+    html += li;
+  });
+
+  quotesUl.innerHTML = html;
+}

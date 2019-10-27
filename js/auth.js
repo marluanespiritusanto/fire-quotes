@@ -70,7 +70,10 @@ loginForm.addEventListener("submit", async event => {
 
 auth.onAuthStateChanged(async user => {
   if (user) {
-    setupUI(user);
+    db.collection("quotes").onSnapshot(snapshot => {
+      setupQuotes(snapshot.docs);
+      setupUI(user);
+    });
   } else {
     console.log(0);
     setupUI();
